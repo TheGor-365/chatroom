@@ -1,0 +1,10 @@
+<h1 class="text-center mb-5">
+  Editing room
+</h1>
+
+<%= render "form", room: @room %>
+<br>
+<div class="float-end">
+  <%= link_to "Show room", @room %><br>
+  <%= link_to "Back to rooms", rooms_path, class: "text-secondary" %>
+</div>

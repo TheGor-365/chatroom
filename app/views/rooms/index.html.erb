@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<h1 class="text-center mb-5">
+  Rooms
+</h1>
+
+  <% @rooms.each do |room| %>
+    <%= render room %><br>
+    <%= link_to "Show room", room, class: "float-end" %>
+  <% end %>
+
+<%= link_to "New room", new_room_path %>

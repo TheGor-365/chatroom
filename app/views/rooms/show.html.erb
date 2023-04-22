@@ -1,0 +1,8 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @room %>
+<div class="float-end">
+  <%= link_to "Edit room", edit_room_path(@room) %><br>
+  <%= link_to "Back to rooms", rooms_path, class: "text-secondary" %>
+  <%= button_to "Destroy room", @room, method: :delete, class: "btn btn-link m-0 p-0 text-decoration-none text-danger" %>
+</div>

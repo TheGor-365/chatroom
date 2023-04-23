@@ -5,8 +5,10 @@
 </h1>
 
   <% @rooms.each do |room| %>
-    <%= render room %><br>
-    <%= link_to "Show room", room, class: "float-end" %>
+    <%= link_to room.name.capitalize, room, class: "text-success" %>
+    <br>
   <% end %>
 
-<%= link_to "New room", new_room_path %>
+<h6 class="shadow p-3 rounded text-center my-5 bg-light">
+  <%= link_to "Create Chatroom", new_room_path, class: "text-success" %>
+</h6>

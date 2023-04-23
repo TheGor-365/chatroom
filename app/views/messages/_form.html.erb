@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-12">
+    <%= simple_form_for([@room, Message.new],
+      data: { action: "turbo:submit-end->messages#resetForm", messages_target: "input_form" }) do |f| %>
+
+      <div class="input-group input-group-lg">
+        <%= f.input :body, label: false, input_html: { placeholder: "Type your message here" },
+        wrapper_html: { class: "form-control input-group-lg" } %>
+        <%= f.submit "SEND", class: "btn btn-ouline-secondary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

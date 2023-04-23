@@ -1,8 +1,21 @@
-<div id="<%= dom_id room %>" class="card p-5 bg-light">
-  <strong class="text-muted">
-    Name:
-  </strong><br>
-  <small>
+<div
+  id="<%= dom_id room %>"
+  class="card p-5 bg-light"
+  data-controller="messages"
+>
+  <%= turbo_stream_from dom_id(room) %>
+
+  <h2 class="text-success">
     <%= room.name %>
-  </small>
+  </h2>
+
+  <div id="messages" data-messages-target="container">
+    <% @messages&.each do |message| %>
+      <%= render "messages/message", message: message %>
+    <% end %>
+  </div>
+
+  <div id="new_message">
+    <%= render "messages/form", room: room %>
+  </div>
 </div>
